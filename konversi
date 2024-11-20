@@ -1,0 +1,31 @@
+def konversi_nilai(nilai):
+    if nilai >= 90:
+        huruf = 'A'
+    elif nilai >= 80:
+        huruf = 'B'
+    elif nilai >= 70:
+        huruf = 'C'
+    elif nilai >= 60:
+        huruf = 'D'
+    else:
+        huruf = 'E'
+    return huruf
+
+def cek_kelulusan(nilai):
+    if nilai >= 70:
+        return "Lulus"
+    else:
+        return "Tidak Lulus"
+
+try:
+    nilai = float(input("Masukkan nilai (0-100): "))
+    if 0 <= nilai <= 100:
+        huruf = konversi_nilai(nilai)
+        status = cek_kelulusan(nilai)
+        print(f"Nilai Anda: {nilai}")
+        print(f"Konversi Nilai: {huruf}")
+        print(f"Status Kelulusan: {status}")
+    else:
+        print("Nilai harus di antara 0 hingga 100.")
+except ValueError:
+    print("Input tidak valid. Masukkan angka.")
